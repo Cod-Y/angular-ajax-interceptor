@@ -1,0 +1,131 @@
+<templateSet group="angular-esis">
+  <template name="ngCtrl" value="(function() {&#10;&#10;  /* @ngInject */&#10;  function $ControllerName$Config($stateProvider) {&#10;    var section = {&#10;      name: 'app.$state$',&#10;      url: '$url$/',&#10;//    abstract: true,&#10;      data: {},&#10;      views: {&#10;        '$VIEW$@': {&#10;//        controllerAs: '',&#10;          templateUrl: '/partials/$END$/$ControllerName$.html',&#10;          controller: '$ControllerName$Ctrl'&#10;        }&#10;      }&#10;    };&#10;&#10;    $stateProvider&#10;      .state(section);&#10;  }&#10;&#10;  /* @ngInject */&#10;  function $ControllerName$Ctrl() {&#10;//  var vm = this;&#10;    &#10;  }&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .config($ControllerName$Config)&#10;    .controller('$ControllerName$Ctrl', $ControllerName$Ctrl)&#10;  ;&#10;}).call(this);&#10;" description="Define a new Angular Controller." toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ControllerName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="state" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VIEW" expression="" defaultValue="'main'" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JS_STATEMENT" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="ngProv" value="(function() {&#10;&#10;  /* @ngInject */&#10;  function $ProviderName$ProviderFactory() {&#10;    var self = this;&#10; &#10; &#10;    self.$get = function $ServiceName$Factory() {&#10;   &#10;    return {&#10;      $END$&#10;    };&#10;   };&#10;  }&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .provider('$ProviderName$', $ProviderName$ProviderFactory)&#10;  ;&#10;}).call(this);" description="Define a new Angular Provider." toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="myApp" alwaysStopAt="true" />
+    <variable name="ProviderName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ServiceName" expression="" defaultValue="ProviderName" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngMod" value="(function() {&#10;   &#10;  /* @ngInject */&#10;  function $ConfigName$Config() {&#10;    &#10;  }&#10;   &#10;  /* @ngInject */&#10;  function $ConfigName$Run($rootScope) {&#10;&#10;  }&#10;   &#10;   &#10;  var dependencies = [&#10;    $END$&#10;  ];&#10;  &#10;//  var applicationConfigConstant = window[&quot;$ConstantName$&quot;] || {};&#10;    &#10;  angular&#10;    .module('$APP$', dependencies)&#10;//    .constant('$ConstantName$', applicationConfigConstant)&#10;    .config($ConfigName$Config)&#10;    .run($ConfigName$Run)&#10;  ;&#10;}).call(this);&#10;" description="Define a new Angular Module." toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ConfigName" expression="firstWord()" defaultValue="APP" alwaysStopAt="true" />
+    <variable name="ConstantName" expression="firstWord()" defaultValue="APP" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngDir" value="(function() {&#10;  /* @ngInject */&#10;  function $DirectiveName$DirectiveFactory() {&#10;    &#10;    &#10;    return {&#10;      restrict: 'EA',&#10;      templateUrl: '/partials/$END$/$DirectiveName$Directive.html',&#10;      link: function $DirectiveName$PostLink(iScope, iElement, iAttrs) {&#10;         &#10;      }&#10;    };&#10;  }&#10;   &#10;&#10;  angular&#10;    .module('$APP$')&#10;    .directive('$directive$', $DirectiveName$DirectiveFactory)&#10;  ;&#10;}).call(this);" description="Define a new Angular Directive" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DirectiveName" expression="jsSuggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="directive" expression="decapitalize(DirectiveName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngFil" value="(function() {&#10;/**&#10; * @usage {{ expression | $FilterName$ }}&#10;**/&#10;&#10;  /* @ngInject */&#10;  function $FilterName$FilterFactory() {&#10; &#10;    return function $FilterName$Worker($input$) {&#10;      var res;&#10;      &#10;      $END$&#10;      &#10;      return res;&#10;   };&#10;  }&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .filter('$FilterName$', $FilterName$FilterFactory)&#10;  ;&#10;}).call(this);&#10;" description="Define a new Angular Filter" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FilterName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="input" expression="" defaultValue="'input'" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngSer" value="(function() {&#10;&#10;  /* @ngInject */&#10;  function $ServiceName$Factory() {&#10;    var self = this;&#10;    &#10;    $END$&#10;  }&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .service('$ServiceName$', $ServiceName$Factory)&#10;  ;&#10;}).call(this);" description="Define a new Angular Service" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ServiceName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngFact" value="(function() {&#10;&#10;  /* @ngInject */&#10;  function $FactoryName$Factory() {&#10;    &#10;    return $END$;&#10;  }&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .factory('$FactoryName$', $FactoryName$Factory)&#10;  ;&#10;}).call(this);" description="Define a new Angular Factory" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FactoryName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngVal" value="(function() {&#10;&#10;  var $ValueName$ = {&#10;    $END$&#10;  };&#10;&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .value('$ValueName$', $ValueName$)&#10;  ;&#10;  &#10;}).call(this);" description="Define a new Angular Value" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ValueName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngConst" value="(function() {&#10;&#10;  var $ConstName$ = {&#10;    $END$&#10;  };&#10;&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .value('$ConstName$', $ConstName$)&#10;  ;&#10;  &#10;}).call(this);" description="Define a new Angular Constant" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ConstName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngRun" value="(function() {&#10;&#10;  /* @ngInject */&#10;  function $RunName$($rootScope, $INJECTABLES$) {&#10;    $END$&#10;  };&#10;&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .run($RunName$)&#10;  ;&#10;  &#10;}).call(this);" description="Define a new Angular.Module.Run Function" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INJECTABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RunName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ngConfig" value="(function() {&#10;&#10;  /* @ngInject */&#10;  function $ConfigName$($INJECTABLES$) {&#10;    $END$&#10;  }&#10;&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .config($ConfigName$)&#10;  ;&#10;  &#10;}).call(this);" description="Define a new Angular.Module.Config Function" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ConfigName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INJECTABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="hitmands.auth" value="(function () {&#10;  /* @ngInject */&#10;  function AuthServiceConfig(AuthServiceProvider, $provide) {&#10;&#10;    AuthServiceProvider&#10;      .useBasicAuthentication()&#10;      .tokenizeHttp()&#10;      .useRoutes({&#10;        login: '/api/v1/user/login',&#10;        logout: '/api/v1/user/logout',&#10;        fetch: '/api/v1/user/current-user'&#10;      })&#10;      .parseHttpAuthData(function(data, headers, statusCode) {&#10;        console.log('parseHttpAuthData', data);&#10;&#10;        return {&#10;          user: $user$,&#10;          token: $token$,&#10;          authLevel: $authLevel$&#10;        };&#10;&#10;      });&#10;&#10;    if( angular.isObject('$condition$') ) {&#10;      AuthServiceProvider.setLoggedUser(&#10;        $condition$['$user$'],&#10;        $condition$['$token$'],&#10;        $condition$['$authLevel$']&#10;      );&#10;    }&#10;&#10;    /*&#10;    $provide.decorator('AuthService', function ($delegate) {&#10;&#10;      $delegate.custom = function (roles, user) {&#10;        var AuthService = this;&#10;      };&#10;&#10;      return $delegate;&#10;    });&#10;    /***/&#10;  }&#10;&#10;  /* @ngInject */&#10;  function AuthServiceRun($rootScope, AuthService, $timeout) {&#10;&#10;    $rootScope.currentUser = AuthService.getCurrentUser();&#10;    $rootScope.isUserLoggedIn = AuthService.isUserLoggedIn();&#10;&#10;    $rootScope.$on('hitmands.auth:update', function () {&#10;      $rootScope.currentUser = AuthService.getCurrentUser();&#10;      $rootScope.isUserLoggedIn = AuthService.isUserLoggedIn();&#10;    });&#10;&#10;    $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {&#10;&#10;      if(error.publisher === 'AuthService.authorize') {&#10;        console.log('Route Protected', error);&#10;      }&#10;    });&#10;&#10;&#10;    $rootScope.loginCredentials = {&#10;      username: '',&#10;      password: '',&#10;      rememberMe: false&#10;    };&#10;  }&#10;&#10;&#10;  angular&#10;    .module('$APP$')&#10;    .config(AuthServiceConfig)&#10;    .run(AuthServiceRun);&#10;}).call(this);&#10;" description="Define a new Angular Hitmands.auth Configuration" toReformat="false" toShortenFQNames="true">
+    <variable name="APP" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="condition" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="user" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="token" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="authLevel" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

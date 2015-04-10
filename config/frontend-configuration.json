@@ -1,0 +1,19 @@
+{
+   "src": "./src/",
+   "dest": "./release/",
+   "build": {
+      "js": "./release/angular-codey-ajaxinterceptor.js",
+      "jsMin": "./release/angular-codey-ajaxinterceptor.min.js"
+   },
+   "ng" : {
+      "app": "Code-Y.ajax",
+      "src" : "./src/",
+      "dest" : "./release/",
+      "output" : "./release/angular-codey-ajaxinterceptor.js",
+      "outputMin" : "./release/angular-codey-ajaxinterceptor.min.js"
+   },
+   "vendor" : {
+      "src": "./vendor/"
+   },
+   "banner": "/**!\n * @Project: <%= pkg.name %>\n * @Authors: [<%= pkg.authors.join(', ') %>]\n * @Link: <%= pkg.homepage %>\n * @License: MIT\n * @Date: <%= grunt.template.today('yyyy-mm-dd') %>\n * @Version: <%= pkg.version %>\n***/\n\n"
+}

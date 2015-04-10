@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="well well-lg " style="min-height: 30em; padding: 1em;">
+
+                <div class="h4">Debugger</div>
+                <div class="" style="clear:both;min-height: 10px;"></div>
+
+                <code class="" style="display: block;padding: 1em; min-height:25em;" ng-class="debug.type">
+                    <div class="dbg-item"><strong>TYPE:&nbsp;</strong> <span ng-bind="debug.value.type | json"></span></div>
+                    <div class="dbg-item"><strong>SUCCESS:&nbsp;</strong> <span ng-bind="debug.value.success | json"></span></div>
+                    <div class="dbg-item"><strong>CODE:&nbsp;</strong> <span ng-bind="debug.value.code | json"></span></div>
+                    <div class="dbg-item"><strong>MESSAGE:&nbsp;</strong> <span ng-bind="debug.value.message | json"></span></div>
+                    <div class="dbg-item"><strong>VALUE:&nbsp;</strong> <span ng-bind="debug.value.value | json"></span></div>
+                    <div class="dbg-item"><strong>ITEMS:&nbsp;</strong> <span ng-bind="debug.value.items | json"></span></div>
+                    <div class="dbg-item"><strong>TOTAL PAGES:&nbsp;</strong> <span ng-bind="debug.value.totalPages | json"></span></div>
+                    <div class="dbg-item"><strong>CURRENT PAGE:&nbsp;</strong> <span ng-bind="debug.value.currentPage | json"></span></div>
+                    <div class="dbg-item"><strong>ERRORS:&nbsp;</strong> <span ng-bind="debug.value.errors | json"></span></div>
+                    <div class="dbg-item"><strong>ERRORS COUNT:&nbsp;</strong> <span ng-bind="debug.value.errorsCount | json"></span></div>
+                    <div class="dbg-item"><strong>HAS ERRORS:&nbsp;</strong> <span ng-bind="debug.value.hasErrors | json"></span></div>
+                </code>
+
+                <div class="" style="padding: 2em 1em;">
+                    <div class="" style="padding-bottom: .5em;">raw:</div>
+                    <span ng-bind="debug.value._res | json"></span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

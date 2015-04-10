@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-ng-app="Code-Y.ajax.sample">
+    <head>
+        <meta charset="UTF-8">
+        <title>Code-Y ~ AjaxInterceptor Angular</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="/vendor/angular/angular.min.js"></script>
+        <script src="/release/angular-codey-ajaxinterceptor.js"></script>
+        <style>
+            [ng-click], [data-ng-click] {
+                cursor: pointer !important;
+            }
+
+            code {
+                border: 1px solid transparent;
+            }
+            code.danger {
+                border-color: red !important;
+            }
+            code.info {
+                border-color: blue !important;
+            }
+
+            .dbg-item {
+                margin-bottom: 5px;
+                border-bottom: 1px solid gainsboro;
+                padding-bottom: 5px;
+
+
+            }
+            .dbg-item strong {
+                width: 150px;
+                display: inline-block;
+                padding-right: 1em;
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="">
+            <nav-menu></nav-menu>
+        </div>
+
+        <section>
+            <debugger></debugger>
+        </section>
+
+        <script src="/sample/application.js"></script>
+        <script src="/sample/Menu.js"></script>
+        <script src="/sample/Debugger.js"></script>
+    </body>
+</html>
