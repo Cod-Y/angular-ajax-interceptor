@@ -1,7 +1,7 @@
 /**!
  * @Project: angular-ajax-interceptor
  * @Authors: [Hitmands <gius.mand.developer@gmail.com>, Luca Pau <luca.pau82@gmail.com>]
- * @Link: https://github.com/Cod-Y/angular-ajax-interceptor
+ * @Link: https://github.com/Code-Y/angular-ajax-interceptor
  * @License: MIT
  * @Date: 2015-04-10
  * @Version: 1.0.0

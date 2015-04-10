@@ -20,8 +20,8 @@ module.exports = function(grunt, options) {
         },
         {
           nonull: true,
-          src: frontend.ng.output,
-          dest: frontend.ng.output
+          src: frontend.ng.outputMin,
+          dest: frontend.ng.outputMin
         }
       ]
     }
