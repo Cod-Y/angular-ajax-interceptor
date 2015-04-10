@@ -1,7 +1,7 @@
 {
   "name": "angular-ajax-interceptor",
   "version": "1.0.0",
-  "description": "A simple interceptor to format $http request and response",
+  "description": "A simple interceptor for formatting $http request and response",
   "main": "index.html",
   "scripts": {
     "test": "grunt test"

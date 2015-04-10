@@ -22,6 +22,7 @@
     "Gruntfile.js",
     "/index.html",
     "index.html",
+    "server.js",
     "bower.json",
     "package.json",
     "nodemon.json",
