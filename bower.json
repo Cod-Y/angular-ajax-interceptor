@@ -6,7 +6,7 @@
     "Hitmands <gius.mand.developer@gmail.com>",
     "Luca Pau <luca.pau82@gmail.com>"
   ],
-  "description": "A simple interceptor to format $http request and response",
+  "description": "A simple interceptor for formatting $http request and response",
   "main": "index.html",
   "keywords": [
     "AngularJS"
