@@ -3,7 +3,7 @@
  * @Authors: [Hitmands <gius.mand.developer@gmail.com>, Luca Pau <luca.pau82@gmail.com>]
  * @Link: https://github.com/Code-Y/angular-ajax-interceptor
  * @License: MIT
- * @Date: 2015-04-10
+ * @Date: 2015-04-17
  * @Version: 1.0.0
 ***/
 
@@ -86,7 +86,16 @@
                return _adaptResponse(response, resolve, reject, $log);
             },
             "responseError": function AjaxInterceptorResponseErrorInterceptor(response) {
-               return reject(response.config.adapt ? new ErrorAjaxResponse(response) : response);
+               if (!response.config.adapt) {
+                  return reject(response);
+               }
+               switch (response.config.adapt) {
+                case "form":
+                  return reject(new FormAjaxResponse(response, !0));
+
+                default:
+                  return reject(new ErrorAjaxResponse(response));
+               }
             }
          };
       }]);
@@ -156,13 +165,14 @@
       _extendResponse(ErrorAjaxResponse);
       return ErrorAjaxResponse;
    }.call(this), FormAjaxResponse = function() {
-      function FormAjaxResponse(res) {
+      function FormAjaxResponse(res, isRejected) {
          FormAjaxResponse.__super__.constructor.apply(this, arguments);
          this.type = TYPES.form;
          this.value = res.data.value || {};
          this.errors = res.data.errors || [];
          this.errorsCount = res.data.errorCount || this.errors.length;
          this.hasErrors = this.errors.length > 0;
+         isRejected === !0 && (this.success = !1);
       }
       _extendResponse(FormAjaxResponse);
       return FormAjaxResponse;

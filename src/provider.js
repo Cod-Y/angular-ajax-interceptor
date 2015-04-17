@@ -54,7 +54,15 @@
             return reject(response);
           }
 
-          return reject( new ErrorAjaxResponse(response) );
+          switch(response.config.adapt) {
+            case 'form':
+              return reject( new FormAjaxResponse(response, true) );
+            break;
+
+            default:
+              return reject( new ErrorAjaxResponse(response) );
+          }
+
         }
       };
     });
